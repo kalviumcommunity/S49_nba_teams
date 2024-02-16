@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "NBA_TEAMS",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
