@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "name": "NBA_TEAMS",
+  "name": "NBA_Teams",
   "type": "collection",
   "ignore": [
     "node_modules",
