@@ -5,7 +5,7 @@ const {
   readItem,
   updateItem,
   deleteItem
-} = require('../S49_nba_teams/docsbruno');
+} = require('./S49_nba_teams/docsbruno');
 
 
 router.post('/items', createItem); 
