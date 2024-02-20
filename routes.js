@@ -7,7 +7,7 @@ const {
   deleteItem
 } = require('../S49_nba_teams/docsbruno');
 
-// Define CRUD routes
+
 router.post('/items', createItem); 
 router.get('/items/:id', readItem); 
 router.put('/items/:id', updateItem);
