@@ -1,0 +1,11 @@
+meta {
+  name: Update Item
+  type: http
+  seq: 1
+}
+
+put {
+  url: http://localhost:3000/items/item_id_here
+  body: '{"name": "Updated Item Name", "description": "Updated description", "price": 15.99}'
+  auth: none
+}
