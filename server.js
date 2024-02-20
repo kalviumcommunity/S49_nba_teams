@@ -1,4 +1,4 @@
-require('dotenv').config(); 
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -11,17 +11,27 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     console.log('Connected to MongoDB :)');
   })
   .catch((error) => {
-    console.error('Couldnt connect to MongoDB :(', error);
+    console.error('Couldn\'t connect to MongoDB :(', error);
   });
 
-app.get('/ping',(req,res)=> {
+// Import routes
+const routes = require('./routes');
+
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Routes
+app.use('/', routes);
+
+app.get('/ping', (req, res) => {
   res.send("pong");
 });
 
-app.get('/',(req,res) =>{
-  const dbStatus = mongoose.connection.readyState === 1? 'Connected' : 'Disconnected';
+app.get('/', (req, res) => {
+  const dbStatus = mongoose.connection.readyState === 1 ? 'Connected' : 'Disconnected';
   res.send(`Database Status: ${dbStatus}`);
-})
+});
 
 if (require.main === module) {
   app.listen(port, () => {
