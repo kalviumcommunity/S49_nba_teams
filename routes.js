@@ -5,7 +5,7 @@ const {
   readItem,
   updateItem,
   deleteItem
-} = require('./docsbruno');
+} = require('../S49_nba_teams/docsbruno');
 
 // Define CRUD routes
 router.post('/items', createItem); 
