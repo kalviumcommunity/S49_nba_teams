@@ -14,14 +14,14 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     console.error('Couldnt connect to MongoDB :(', error);
   });
 
-// Import routes
+
 const routes = require('./routes');
 
-// Middleware
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Routes
+
 app.use('/', routes);
 
 app.get('/ping', (req, res) => {
