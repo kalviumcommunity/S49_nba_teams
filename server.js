@@ -11,7 +11,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     console.log('Connected to MongoDB :)');
   })
   .catch((error) => {
-    console.error('Couldn\'t connect to MongoDB :(', error);
+    console.error('Couldnt connect to MongoDB :(', error);
   });
 
 // Import routes
