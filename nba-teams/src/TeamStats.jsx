@@ -1,4 +1,5 @@
 import React from 'react';
+import './TeamStats.css'
 
 const TeamStatsComponent = ({ team }) => {
     return (
