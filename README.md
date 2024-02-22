@@ -9,7 +9,6 @@ Shows a list of all the NBA teams.
 # Feature
 
 Shows them based on their confrence and current standings in the league.
-yes.
 
 # Deployed Link
 [Check it out here](ash-nba-stats.netlify.app)
