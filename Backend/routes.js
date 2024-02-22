@@ -20,7 +20,6 @@ router.get('/players/:id', (req, res) => {
     res.json(player);
 });
 
-// Create (POST) a new player
 router.post('/players', (req, res) => {
     const { name, rings } = req.body;
     const newPlayer = {
@@ -32,7 +31,6 @@ router.post('/players', (req, res) => {
     res.status(201).json(newPlayer);
 });
 
-// Update (PUT) an existing player
 router.put('/players/:id', (req, res) => {
     const playerId = parseInt(req.params.id);
     const playerIndex = players.findIndex(player => player.id === playerId);
@@ -50,7 +48,7 @@ router.put('/players/:id', (req, res) => {
 router.delete('/players/:id', (req, res) => {
     const playerId = parseInt(req.params.id);
     players = players.filter(player => player.id !== playerId);
-    res.json({ message: 'Player deleted successfully' });
+    res.json({ message: 'Player eliminated successfully' });
 });
 
 module.exports = router;
