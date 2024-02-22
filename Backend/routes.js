@@ -1,73 +1,56 @@
 const express = require('express');
 const router = express.Router();
-const { MongoClient } = require('mongodb');
 
-const uri = process.env.DATABASE_URI;
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+let players = [
+    { id: 1, name: 'Steph Curry', rings: 3 },
+    { id: 2, name: 'LeBron James', rings: 4 }
+];
 
-const connectDB = async (req, res, next) => {
-  try {
-    if (!client.isConnected()) {
-      await client.connect();
+
+router.get('/players', (req, res) => {
+    res.json(players);
+});
+
+router.get('/players/:id', (req, res) => {
+    const playerId = parseInt(req.params.id);
+    const player = players.find(player => player.id === playerId);
+    if (!player) {
+        return res.status(404).json({ message: 'Player not found' });
     }
-    req.dbClient = client;
-    next();
-  } catch (error) {
-    console.error('Error connecting to the database:', error);
-    res.status(500).json({ "error": "Internal Server Error" });
-  }
-};
+    res.json(player);
+});
 
-const closeDB = async (req, res, next) => {
-  try {
-    if (client.isConnected()) {
-      await client.close();
+// Create (POST) a new player
+router.post('/players', (req, res) => {
+    const { name, rings } = req.body;
+    const newPlayer = {
+        id: players.length + 1, 
+        name: 'JA Morant',
+        rings: 0
+    };
+    players.push(newPlayer);
+    res.status(201).json(newPlayer);
+});
+
+// Update (PUT) an existing player
+router.put('/players/:id', (req, res) => {
+    const playerId = parseInt(req.params.id);
+    const playerIndex = players.findIndex(player => player.id === playerId);
+    if (playerIndex === -1) {
+        return res.status(404).json({ message: 'Player not found' });
     }
-    next();
-  } catch (error) {
-    console.error('Error disconnecting from the database:', error);
-    res.status(500).json({ "error": "Internal Server Error" });
-  }
-};
-
-router.post('/create', connectDB, async (req, res) => {
-  try {
-    const { dbClient } = req;
-    res.status(201).json({ "success": "data created" });
-  } catch (error) {
-    console.error('Error creating data:', error);
-    res.status(500).json({ "error": "Internal Server Error" });
-  }
+    const { name, rings } = req.body;
+    players[playerIndex].name = name;
+    players[playerIndex].rings = rings;
+    res.json(players[playerIndex]);
 });
 
-router.get('/read', connectDB, async (req, res) => {
-  try {
-    const { dbClient } = req;
-    res.status(200).json({ "success": "data read" });
-  } catch (error) {
-    console.error('Error reading data:', error);
-    res.status(500).json({ "error": "Internal Server Error" });
-  }
-});
 
-router.put('/update', connectDB, async (req, res) => {
-  try {
-    const { dbClient } = req;
-    res.status(200).json({ "success": "data updated" });
-  } catch (error) {
-    console.error('Error updating data:', error);
-    res.status(500).json({ "error": "Internal Server Error" });
-  }
-});
 
-router.delete('/delete', connectDB, async (req, res) => {
-  try {
-    const { dbClient } = req;
-    res.status(200).json({ "success": "data deleted" });
-  } catch (error) {
-    console.error('Error deleting data:', error);
-    res.status(500).json({ "error": "Internal Server Error" });
-  }
+router.delete('/players/:id', (req, res) => {
+    const playerId = parseInt(req.params.id);
+    players = players.filter(player => player.id !== playerId);
+    res.json({ message: 'Player deleted successfully' });
 });
 
 module.exports = router;
