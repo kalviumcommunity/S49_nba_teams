@@ -1,4 +1,46 @@
+/* Add your existing CSS styles here */
 *{
-  justify-content: center;
-  background-color: rgb(43, 143, 231);
+  background-color: #4785d1;
 }
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.teams-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.team-container {
+  width: calc(20% - 20px); /* 20% width for each team container */
+  margin: 0 10px 20px 0; /* Add margin between and around team containers */
+  padding: 20px;
+  background-color: #e36363;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-image: url('/nbaimages/background.gif');
+}
+
+.view-more-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #4e9af1;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.view-more-btn:hover {
+  background-color: #4785d1;
+}
+
+body {
+   /* Replace 'your-gif-file.gif' with the path to your GIF file */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+

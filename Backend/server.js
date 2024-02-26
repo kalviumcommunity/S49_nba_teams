@@ -1,43 +1,36 @@
 require('dotenv').config();
 const express = require('express');
-const app = express();
-const port = 3000;
 const mongoose = require('mongoose');
+const cors = require('cors');
+let StatData=require("./models/teams.js")
 
-const mongoURI = process.env.DATABASE_URI;
+const app = express();
+const port = process.env.PORT || 3000;
 
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    console.log('Connected to MongoDB :)');
-  })
-  .catch((error) => {
-    console.error('Couldnt connect to MongoDB :(', error);
-  });
-
-
-const routes = require('./routes');
-
-
-
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-
-app.use('/', routes);
-
-app.get('/ping', (req, res) => {
-  res.send("pong");
+async function Connection(){
+      await mongoose.connect(process.env.DATABASE_URI);
+      console.log("Connected to DB")
+}
+app.get('/teams', async (req, res) => {
+  try {
+    const teams = await StatData.find();
+    console.log('Retrieved teams:', teams);
+    res.json(teams);
+  } catch (err) {
+    console.error('Error retrieving teams:', err);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 });
 
-app.get('/', (req, res) => {
-  const dbStatus = mongoose.connection.readyState === 1 ? 'Connected' : 'Disconnected';
-  res.send(`Database Status: ${dbStatus}`);
-});
 
-if (require.main === module) {
+Connection().then(()=>{
+
   app.listen(port, () => {
     console.log(`🚀 server running on PORT: ${port}`);
   });
-}
+})
 
-module.exports = app;
+

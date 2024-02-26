@@ -1,7 +1,240 @@
-[
- {
-  "NBA Team": "Golden State Warriors",
-  "Number of League Titles Won": 6,
-  "Longest Winning Streak": 28
- }
-]
+[{
+    "_id": {
+      "$oid": "65d034a78309218d27c4edff"
+    },
+    "NBA_Team": "Atlanta Hawks",
+    "Number_of_League_Titles_Won": 1,
+    "Longest_Winning_Streak": 14
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee00"
+    },
+    "NBA_Team": "Boston Celtics",
+    "Number_of_League_Titles_Won": 17,
+    "Longest_Winning_Streak": 19
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee01"
+    },
+    "NBA_Team": "Brooklyn Nets",
+    "Number_of_League_Titles_Won": 0,
+    "Longest_Winning_Streak": 14
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee02"
+    },
+    "NBA_Team": "Charlotte Hornets",
+    "Number_of_League_Titles_Won": 0,
+    "Longest_Winning_Streak": 7
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee03"
+    },
+    "NBA_Team": "Chicago Bulls",
+    "Number_of_League_Titles_Won": 6,
+    "Longest_Winning_Streak": 18
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee04"
+    },
+    "NBA_Team": "Cleveland Cavaliers",
+    "Number_of_League_Titles_Won": 1,
+    "Longest_Winning_Streak": 13
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee05"
+    },
+    "NBA_Team": "Dallas Mavericks",
+    "Number_of_League_Titles_Won": 1,
+    "Longest_Winning_Streak": 17
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee06"
+    },
+    "NBA_Team": "Denver Nuggets",
+    "Number_of_League_Titles_Won": 0,
+    "Longest_Winning_Streak": 15
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee07"
+    },
+    "NBA_Team": "Detroit Pistons",
+    "Number_of_League_Titles_Won": 3,
+    "Longest_Winning_Streak": 11
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee08"
+    },
+    "NBA_Team": "Golden State Warriors",
+    "Number_of_League_Titles_Won": 6,
+    "Longest_Winning_Streak": 28
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee09"
+    },
+    "NBA_Team": "Houston Rockets",
+    "Number_of_League_Titles_Won": 2,
+    "Longest_Winning_Streak": 22
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee0a"
+    },
+    "NBA_Team": "Indiana Pacers",
+    "Number_of_League_Titles_Won": 0,
+    "Longest_Winning_Streak": 7
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee0b"
+    },
+    "NBA_Team": "Los Angeles Clippers",
+    "Number_of_League_Titles_Won": 0,
+    "Longest_Winning_Streak": 17
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee0c"
+    },
+    "NBA_Team": "Los Angeles Lakers",
+    "Number_of_League_Titles_Won": 17,
+    "Longest_Winning_Streak": 33
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee0d"
+    },
+    "NBA_Team": "Memphis Grizzlies",
+    "Number_of_League_Titles_Won": 0,
+    "Longest_Winning_Streak": 7
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee0e"
+    },
+    "NBA_Team": "Miami Heat",
+    "Number_of_League_Titles_Won": 3,
+    "Longest_Winning_Streak": 27
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee0f"
+    },
+    "NBA_Team": "Milwaukee Bucks",
+    "Number_of_League_Titles_Won": 2,
+    "Longest_Winning_Streak": 20
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee10"
+    },
+    "NBA_Team": "Minnesota Timberwolves",
+    "Number_of_League_Titles_Won": 0,
+    "Longest_Winning_Streak": 10
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee11"
+    },
+    "NBA_Team": "New Orleans Pelicans",
+    "Number_of_League_Titles_Won": 0,
+    "Longest_Winning_Streak": 10
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee12"
+    },
+    "NBA_Team": "New York Knicks",
+    "Number_of_League_Titles_Won": 2,
+    "Longest_Winning_Streak": 18
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee13"
+    },
+    "NBA_Team": "Oklahoma City Thunder",
+    "Number_of_League_Titles_Won": 1,
+    "Longest_Winning_Streak": 12
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee14"
+    },
+    "NBA_Team": "Orlando Magic",
+    "Number_of_League_Titles_Won": 0,
+    "Longest_Winning_Streak": 11
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee15"
+    },
+    "NBA_Team": "Philadelphia 76ers",
+    "Number_of_League_Titles_Won": 3,
+    "Longest_Winning_Streak": 20
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee16"
+    },
+    "NBA_Team": "Phoenix Suns",
+    "Number_of_League_Titles_Won": 0,
+    "Longest_Winning_Streak": 17
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee17"
+    },
+    "NBA_Team": "Portland Trail Blazers",
+    "Number_of_League_Titles_Won": 1,
+    "Longest_Winning_Streak": 16
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee18"
+    },
+    "NBA_Team": "Sacramento Kings",
+    "Number_of_League_Titles_Won": 1,
+    "Longest_Winning_Streak": 15
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee19"
+    },
+    "NBA_Team": "San Antonio Spurs",
+    "Number_of_League_Titles_Won": 5,
+    "Longest_Winning_Streak": 20
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee1a"
+    },
+    "NBA_Team": "Toronto Raptors",
+    "Number_of_League_Titles_Won": 1,
+    "Longest_Winning_Streak": 15
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee1b"
+    },
+    "NBA_Team": "Utah Jazz",
+    "Number_of_League_Titles_Won": 0,
+    "Longest_Winning_Streak": 15
+  },
+  {
+    "_id": {
+      "$oid": "65d034a78309218d27c4ee1c"
+    },
+    "NBA_Team": "Washington Wizards",
+    "Number_of_League_Titles_Won": 1,
+    "Longest_Winning_Streak": 10
+  }]
