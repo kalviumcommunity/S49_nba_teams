@@ -1,0 +1,52 @@
+
+body {
+    background-image: url("https://i.pinimg.com/originals/5e/11/99/5e11996f06ff229b9f082b44f2484fc7.gif");
+    background-size: 20px 20px; 
+    font-family: "Preahvihear", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .teams-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .team-container {
+    width: calc(20% - 20px); 
+    margin: 0 10px 20px 0;
+    padding: 20px;
+    background-color: #e36363c8;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-image: url('/nbaimages/background.gif');
+  }
+  
+  .view-more-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4e9af1;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .view-more-btn:hover {
+    background-color: #4785d1;
+  }
+  
+  body {
+     /* Replace 'your-gif-file.gif' with the path to your GIF file */
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  
