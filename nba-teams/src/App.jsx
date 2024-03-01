@@ -1,46 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import './App.css';
+import Navbar from "./Header"
+import Form from "./components/Form"
+import Landing from "./components/Landing"
+import { Route, Routes } from "react-router-dom"
+import Home from "./components/Home"
+import Myteams from "./components/Myteams"
+import Update from './components/Update';
 
 function App() {
-  const [teams, setTeams] = useState([]);
-  const [visibleTeams, setVisibleTeams] = useState(10); // Number of teams initially visible
-
-  useEffect(() => {
-    axios.get('http://localhost:3000/teams')
-      .then(response => {
-        console.log('Received teams:', response.data);
-        setTeams(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching teams:', error);
-      });
-  }, []);
-
-  const handleViewMore = () => {
-    setVisibleTeams(prevVisibleTeams => prevVisibleTeams + 10); // Increase visible teams by 10
-  };
-
   return (
     <>
-      <div className="header">
-        <header>
-          <h1>NBA Stats</h1>
-        </header>
+      <Navbar />
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/Form" element={<Form />} />
+          <Route path = "/Home" element = {<Home />}/>
+          <Route path = "/MyTeams" element = {<Myteams/>}/>
+          <Route path = "/Update/:id" element = {<Update/>}/>
+        </Routes>
       </div>
-      <div className="teams-container">
-        {teams.slice(0, visibleTeams).map((team, index) => (
-          <div className="team-container" key={index}>
-            {/* <img src={`/logos/${team.logo}`} alt={team.NBA_Team} /> */}
-            {team.NBA_Team}
-          </div>
-        ))}
-      </div>
-      {teams.length > visibleTeams && (
-        <button className="view-more-btn" onClick={handleViewMore}>View More Teams</button>
-      )}
     </>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Preahvihear&display=swap');
+body {
+   background-image: url("https://i.pinimg.com/originals/5e/11/99/5e11996f06ff229b9f082b44f2484fc7.gif"); 
+  /* background-color: rgb(71, 224, 244); */
+  background-size: 20px 20px; 
+  font-family: "Preahvihear", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background-color: #ffffffc9;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card:hover img {
+  filter: brightness(0.8);
+}
+
+.card img {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.card-description {
+  font-size: 0.875rem;
+  color: #555;
+}
+.add-team-button {
+  position: fixed;
+  top: 20px; /* Adjust the value as needed */
+  right: -1300px; /* Adjust the value to move it to the top right */
+  z-index: 100; /* Ensure it's above other content */
+}
+h1{
+  text-align: center;
+  color: #000;
+  text-decoration-thickness: 200;
+}
