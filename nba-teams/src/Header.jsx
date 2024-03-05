@@ -26,7 +26,16 @@ export default function Navbar() {
         style={{ width: '150px', color: 'white', backgroundColor: 'purple' }}>
       <b>View Your Teams</b>
       </Button>       
-        <Button
+      <Button
+      component={Link}
+      to="/login"
+      variant="contained"
+      className="login-button"
+      style={{ width: '150px', color: 'black', backgroundColor: 'white' }}
+      >
+      <b>Login</b>
+      </Button>
+      <Button
         component={Link}
         to="/Form"
         variant="contained"
@@ -34,7 +43,7 @@ export default function Navbar() {
         style={{ width: '150px', color: 'white',backgroundColor: 'black' }}
         >
         <b>Add Your Team</b>
-        </Button>
+      </Button>
 
       </div>
     </nav>
