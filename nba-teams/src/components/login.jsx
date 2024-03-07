@@ -1,28 +1,47 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
 import "./Login.css";
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+import Cookies from 'js-cookie';
 
 export default function Login() {
-
   const [field, setField] = useState({
-    firstName:"",
-    lastName:"",
-    email:"",
-    mobile:""
+    firstName: "",
+    password: "",
   });
 
   const [submitted, setSubmit] = useState(false);
-  const [validate, setValidation] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:3000/register', field); // Corrected URL
+      console.log(response.data); 
+      Cookies.set('firstName',response.data.firstName);
+      setSubmit(true);
+    } catch (error) {
+      console.error('Registration failed:', error.response.data.error);
+      setError(error.response.data.error);
+    }
+  };
+
+  const handleLogout = async () => {
+    try {
+      await axios.post('http://localhost:3000/logout'); // Endpoint for logout
+      Cookies.remove('firstName');
+      setSubmit(false);
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
+  };
 
   return (
     <div className="form-container">
-      <form className="register-form" onSubmit={(e)=>{e.preventDefault();
-        if(field.firstName && field.lastName && field.email && field.mobile)setValidation(true);
-        setSubmit(true)}}>
-
-        {submitted && validate?<div className="success-message">You have successfully registered ✅</div>:null}
+      <form className="register-form" onSubmit={handleSubmit}>
+        {submitted ? (
+          <div className="success-message">You have successfully registered ✅</div>
+        ) : null}
+        {error ? <div className="error-message">{error}</div> : null}
 
         <input
           id="user-name"
@@ -30,28 +49,29 @@ export default function Login() {
           type="text"
           placeholder="User Name"
           name="firstName"
-          value={field.username}
-          onChange={(e)=>{setField({...field, firstName:e.target.value})}}
+          value={field.firstName}
+          onChange={(e) => setField({ ...field, firstName: e.target.value })}
         />
 
-        {submitted && !field.firstName ?<span>Please enter your Username</span>:null}
-       
         <input
-          id="email"
+          id="password"
           className="form-field"
-          type="text"
-          placeholder="Email"
-          name="email"
-          value={field.email}
-          onChange={(e)=>{setField({...field, email:e.target.value})}}
+          type="password"
+          placeholder="Password"
+          name="password"
+          value={field.password}
+          onChange={(e) => setField({ ...field, password: e.target.value })}
         />
-
-        {submitted && !field.email ?<span>Please enter your email</span>:null}
 
         <button className="form-field" type="submit">
-          🎊 Regitser 🎊
+          🎊 Register 🎊
         </button>
       </form>
+      {submitted && (
+        <button className="logout-button" onClick={handleLogout}>
+          Logout
+        </button>
+      )}
     </div>
   );
 }
