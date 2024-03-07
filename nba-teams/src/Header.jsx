@@ -9,42 +9,51 @@ export default function Navbar() {
         <b className="site-title">NBA.stats</b>
       </Link>
       <div className="nav-links">
-      <Button
-      component={Link}
-      to="/Home"
-      variant="contained"
-      className="stat-button"
-      style={{ width: '150px', color: 'black', backgroundColor: 'white' }}
-      >
-      <b>View Team Stats</b>
-      </Button>
         <Button
-        component={Link}
-        to="/MyTeams"
-        variant="contained"
-        className="team-button"
-        style={{ width: '150px', color: 'white', backgroundColor: 'purple' }}>
-      <b>View Your Teams</b>
-      </Button>       
-      <Button
-      component={Link}
-      to="/login"
-      variant="contained"
-      className="login-button"
-      style={{ width: '150px', color: 'black', backgroundColor: 'white' }}
-      >
-      <b>Login</b>
-      </Button>
-      <Button
-        component={Link}
-        to="/Form"
-        variant="contained"
-        className="add-team-button"
-        style={{ width: '150px', color: 'white',backgroundColor: 'black' }}
+          component={Link}
+          to="/Home"
+          variant="contained"
+          className="stat-button"
+          style={{ width: '150px', color: 'black', backgroundColor: 'white' }}
         >
-        <b>Add Your Team</b>
-      </Button>
-
+          <b>View Team Stats</b>
+        </Button>
+        <Button
+          component={Link}
+          to="/MyTeams"
+          variant="contained"
+          className="team-button"
+          style={{ width: '150px', color: 'white', backgroundColor: 'purple' }}
+        >
+          <b>View Your Teams</b>
+        </Button>       
+        <Button
+          component={Link}
+          to="/login"
+          variant="contained"
+          className="login-button"
+          style={{ width: '150px', color: 'black', backgroundColor: 'white' }}
+        >
+          <b>Login</b>
+        </Button>
+        <Button
+          component={Link}
+          to="/Form"
+          variant="contained"
+          className="login"
+          style={{ width: '150px', color: 'white', backgroundColor: 'black' }}
+        >
+          <b>Add Your Team</b>
+        </Button>
+        {/* <Button
+          component={Link}
+          to="/Form"
+          variant="contained"
+          className="add-team-button"
+          style={{ width: '150px', color: 'white', backgroundColor: 'black' }}
+        >
+          <b>Add Your Team</b>
+        </Button> */}
       </div>
     </nav>
   );

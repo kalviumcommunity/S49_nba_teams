@@ -1,52 +1,47 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
 .nav {
-  margin-top: 0%;
-  justify-content: space-between;
-  gap: 2rem;
-  padding: 0 1rem;
-}
-.container {
-  margin: 1rem;
-  text-align: center;
-}
-.site-title {
-  font-size: 3rem; /* Adjust font size as needed */
-  margin-top: 0;
-}
-
-
-.nav ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
-  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px; /* Adjust padding as needed */
+  background-color: #33333332; /* Add a background color */
 }
 
-.nav a {
-  color: inherit;
-  text-decoration: none;
-  height: 100%;
+.site-title {
+  font-size: 1rem; /* Adjust font size as needed */
+  color: white; /* Set the color of the site title */
+  text-decoration: none; /* Remove underline */
+}
+
+.nav-links {
   display: flex;
   align-items: center;
-  padding: .20rem;
 }
 
-.nav li.active {
-  background-color: #000000;
+.nav-links > * {
+  margin-right: 10px; /* Add spacing between buttons */
 }
 
-.nav li:hover {
-  background-color: #000000;
+/* Add margin-right only to buttons except the last one */
+.nav-links > *:not(:last-child) {
+  margin-right: 10px; /* Adjust the margin as needed */
 }
 
+.stat-button,
+.team-button,
+.login-button,
 .add-team-button {
-  width: 150px; /* Adjust the width value as needed */
+  color: white;
+  background-color: black;
+  width: 150px;
+}
+
+.stat-button:hover,
+.team-button:hover,
+.login-button:hover,
+.add-team-button:hover {
+  background-color: #555; /* Darken the background color on hover */
 }
