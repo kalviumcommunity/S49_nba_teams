@@ -5,11 +5,14 @@ const cors = require('cors');
 const StatData = require("./models/teams.js");
 const UTdata = require("./models/usert.js");
 const { validateTeam } = require('./models/validator.js'); // Importing the validateTeam function
+const cookieParser = require("cookie-parser");
+const User = require('./models/users.js')
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(cors());
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -71,6 +74,32 @@ app.delete('/deleteteam/:id', (req, res) => {
         .then(deletedTeam => res.json(deletedTeam))
         .catch(err => res.json(err));
 });
+
+
+app.post("/register", async (req, res) => {
+    try {
+        const { firstName, password } = req.body;
+
+        // Check if user with the same firstName already exists
+        const existingUser = await User.findOne({ firstName });
+        if (existingUser) {
+            return res.status(400).json({ error: 'User already exists' });
+        }
+        const newUser = await User.create({ firstName, password });
+        res.cookie("firtstName", firstName);
+        res.status(201).json(newUser);
+    } catch (err) {
+        console.error('Error registering user:', err);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+
+app.post('/logout', (req, res) => {
+    res.clearCookie('username');
+    res.status(200).json({ message: 'Logout successful' });
+  });
+
 
 Connection().then(() => {
     app.listen(port, () => {
