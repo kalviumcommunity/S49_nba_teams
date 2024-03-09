@@ -18,7 +18,7 @@ function Home() {
   }, []);
 
   const handleViewMore = () => {
-    setVisibleTeams(prevVisibleTeams => prevVisibleTeams + 10); // Increase visible teams by 10
+    setVisibleTeams(prevVisibleTeams => prevVisibleTeams + 10); 
   };
 
   return (

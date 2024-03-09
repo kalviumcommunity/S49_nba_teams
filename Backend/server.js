@@ -7,6 +7,8 @@ const UTdata = require("./models/usert.js");
 const { validateTeam } = require('./models/validator.js'); // Importing the validateTeam function
 const cookieParser = require("cookie-parser");
 const User = require('./models/users.js')
+const jwt = require('jsonwebtoken')
+
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -79,20 +81,23 @@ app.delete('/deleteteam/:id', (req, res) => {
 app.post("/register", async (req, res) => {
     try {
         const { firstName, password } = req.body;
-
-        // Check if user with the same firstName already exists
         const existingUser = await User.findOne({ firstName });
         if (existingUser) {
             return res.status(400).json({ error: 'User already exists' });
         }
         const newUser = await User.create({ firstName, password });
-        res.cookie("firtstName", firstName);
+
+        const token = jwt.sign({ firstName: newUser.firstName }, process.env.ACCESS_TOKEN_SECRET);
+
+        res.cookie("token", token, { httpOnly: true });
+
         res.status(201).json(newUser);
     } catch (err) {
         console.error('Error registering user:', err);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
+
 
 
 app.post('/logout', (req, res) => {

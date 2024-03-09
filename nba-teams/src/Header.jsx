@@ -45,15 +45,6 @@ export default function Navbar() {
         >
           <b>Add Your Team</b>
         </Button>
-        {/* <Button
-          component={Link}
-          to="/Form"
-          variant="contained"
-          className="add-team-button"
-          style={{ width: '150px', color: 'white', backgroundColor: 'black' }}
-        >
-          <b>Add Your Team</b>
-        </Button> */}
       </div>
     </nav>
   );
