@@ -15,13 +15,15 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/register', field); // Corrected URL
+      const response = await axios.post('http://localhost:3000/register', field);
       console.log(response.data); 
-      Cookies.set('firstName',response.data.firstName);
+      Cookies.set('firstName', response.data.firstName);
       setSubmit(true);
     } catch (error) {
       console.error('Registration failed:', error.response.data.error);
       setError(error.response.data.error);
+      // Display popup/alert for user already exists error
+      alert(error.response.data.error);
     }
   };
 
@@ -48,7 +50,7 @@ export default function Login() {
           className="form-field"
           type="text"
           placeholder="User Name"
-          name="firstName"
+          name="  "
           value={field.firstName}
           onChange={(e) => setField({ ...field, firstName: e.target.value })}
         />
