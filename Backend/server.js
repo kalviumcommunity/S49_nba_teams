@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const StatData = require("./models/teams.js");
 const UTdata = require("./models/usert.js");
-const { validateTeam } = require('./models/validator.js'); // Importing the validateTeam function
+const { validateTeam } = require('./models/validator.js'); 
 const cookieParser = require("cookie-parser");
 const User = require('./models/users.js')
 const jwt = require('jsonwebtoken')
@@ -104,6 +104,16 @@ app.post('/logout', (req, res) => {
     res.clearCookie('username');
     res.status(200).json({ message: 'Logout successful' });
   });
+
+  app.get('/users', async (req, res) => {
+    try {
+        const users = await User.find({}, 'firstName');
+        res.json(users);
+    } catch (err) {
+        console.error('Error retrieving users:', err);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
 
 
 Connection().then(() => {

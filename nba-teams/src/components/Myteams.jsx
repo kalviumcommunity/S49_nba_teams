@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Myteams.css';
 import axios from 'axios';
 
-function Myteams() {
+function Myteams({ selectedUser }) {
   const [teams, setTeams] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -25,15 +25,16 @@ function Myteams() {
   if (teams.length === 0) return <div>No teams found.</div>;
 
   const handleDelete = (id) => {
-    console.log(id)
-    axios.delete(`http://localhost:3000/deleteteam/`+ id)
-    .then(res => {console.log(res)
-      window.location.reload()})
-    .catch(errr => console.log(errr))
-  }
+    axios.delete(`http://localhost:3000/deleteteam/` + id)
+      .then(res => {
+        window.location.reload();
+      })
+      .catch(errr => console.log(errr));
+  };
 
   return (
     <div>
+      <h1>Ash Boi'sTeams</h1>
       {teams.map(team => (
         <div className="card" key={team._id}>
           <h2>{team.Team_Name}</h2>

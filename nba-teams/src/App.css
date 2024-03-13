@@ -22,12 +22,12 @@
 }
 
 .nav-links > * {
-  margin-right: 10px; /* Add spacing between buttons */
+  margin-right: 10px; 
 }
 
-/* Add margin-right only to buttons except the last one */
+
 .nav-links > *:not(:last-child) {
-  margin-right: 10px; /* Adjust the margin as needed */
+  margin-right: 10px; 
 }
 
 .stat-button,
@@ -43,5 +43,5 @@
 .team-button:hover,
 .login-button:hover,
 .add-team-button:hover {
-  background-color: #555; /* Darken the background color on hover */
+  background-color: #555; 
 }
