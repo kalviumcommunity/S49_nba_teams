@@ -22,14 +22,13 @@ export default function Login() {
     } catch (error) {
       console.error('Registration failed:', error.response.data.error);
       setError(error.response.data.error);
-      // Display popup/alert for user already exists error
       alert(error.response.data.error);
     }
   };
 
   const handleLogout = async () => {
     try {
-      await axios.post('http://localhost:3000/logout'); // Endpoint for logout
+      await axios.post('http://localhost:3000/logout'); 
       Cookies.remove('firstName');
       setSubmit(false);
     } catch (error) {
