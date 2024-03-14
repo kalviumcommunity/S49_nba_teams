@@ -12,7 +12,7 @@ export default function Update() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/getteam/${id}`)
+    axios.get(`https://nba-teams-y83o.onrender.com/getteam/${id}`)
       .then(result => {
         console.log(result);
         setTeam(result.data);
@@ -21,7 +21,7 @@ export default function Update() {
   }, [id]);
 
   const onSubmit = (data) => {
-    axios.put(`http://localhost:3000/updateteam/${id}`, data)
+    axios.put(`https://nba-teams-y83o.onrender.com/updateteam/${id}`, data)
       .then(result => {
         console.log(result);
         setSubmitted(true);

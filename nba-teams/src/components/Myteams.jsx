@@ -9,7 +9,7 @@ function Myteams({ selectedUser }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/createteam')
+    axios.get('https://nba-teams-y83o.onrender.com/createteam')
       .then(result => {
         setTeams(result.data);
         setLoading(false);
@@ -25,7 +25,7 @@ function Myteams({ selectedUser }) {
   if (teams.length === 0) return <div>No teams found.</div>;
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:3000/deleteteam/` + id)
+    axios.delete(`https://nba-teams-y83o.onrender.com/deleteteam/` + id)
       .then(res => {
         window.location.reload();
       })
