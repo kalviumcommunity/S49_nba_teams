@@ -34,7 +34,7 @@ function Myteams({ selectedUser }) {
 
   return (
     <div>
-      <h1>Ash Boi'sTeams</h1>
+      <h1>Your Teams {selectedUser}</h1>
       {teams.map(team => (
         <div className="card" key={team._id}>
           <h2>{team.Team_Name}</h2>
