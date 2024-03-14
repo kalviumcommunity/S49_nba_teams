@@ -13,7 +13,7 @@ Shows the teams various achievements like the number of rings they have or their
 You are also allowed to submit your own team to the ever expanding database.
 
 # Deployed Link
-[Check it out here](ash-nba-stats.netlify.app)
+[Check it out here](https://ash-nba-stats.netlify.app)
 
 # Render Deploy
 
