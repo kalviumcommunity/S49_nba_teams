@@ -1,6 +1,6 @@
 # ASAP project
 
-NBA teams
+NBA Stats
 
 # Idea
 
