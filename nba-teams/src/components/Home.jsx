@@ -7,7 +7,7 @@ function Home() {
   const [visibleTeams, setVisibleTeams] = useState(10); 
 
   useEffect(() => {
-    axios.get('http://localhost:3000/teams')
+    axios.get('https://nba-teams-y83o.onrender.com/teams')
       .then(response => {
         console.log('Received teams:', response.data);
         setTeams(response.data);

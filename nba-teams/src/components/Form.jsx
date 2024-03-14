@@ -9,7 +9,7 @@ export default function Form() {
   const [submitted, setSubmitted] = useState(false);
   const navigate = useNavigate()
   const onSubmit = (data) => {
-    axios.post('http://localhost:3000/createteam', data)
+    axios.post('https://nba-teams-y83o.onrender.com/createteam', data)
       .then(result => {
         console.log(result);
         setSubmitted(true);

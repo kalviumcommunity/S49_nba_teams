@@ -15,7 +15,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/register', field);
+      const response = await axios.post('https://nba-teams-y83o.onrender.com/register', field);
       console.log(response.data); 
       Cookies.set('firstName', response.data.firstName);
       setSubmit(true);
@@ -28,7 +28,7 @@ export default function Login() {
 
   const handleLogout = async () => {
     try {
-      await axios.post('http://localhost:3000/logout'); 
+      await axios.post('https://nba-teams-y83o.onrender.com/logout'); 
       Cookies.remove('firstName');
       setSubmit(false);
     } catch (error) {
