@@ -13,3 +13,4 @@ Welcome to NBA Stats! This project aims to provide a comprehensive overview of e
 - **Netlify**: Visit our deployed site on [Netlify](https://ash-nba-stats.netlify.app) to explore NBA team stats and achievements.
 
 - **Render**: Alternatively, check out our site hosted on [Render](https://nba-teams-y83o.onrender.com/teams) for another way to access NBA team data.
+
